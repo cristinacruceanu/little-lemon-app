@@ -1,46 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Navbar.css";
 import Logo from "./../assets/icons_assets/Logo.svg";
-
-const navigation = [
-  {
-    name: "home",
-    url: "https://little-lemon-restaurant-tau.vercel.app/#home",
-  },
-  {
-    icon: "about",
-    url: "https://little-lemon-restaurant-tau.vercel.app/#about",
-  },
-  {
-    icon: "menu",
-    url: "https://little-lemon-restaurant-tau.vercel.app/#menu",
-  },
-  {
-    icon: "reservation",
-    url: "https://little-lemon-restaurant-tau.vercel.app/reservations",
-  },
-  {
-    icon: "reservation",
-    url: "https://little-lemon-restaurant-tau.vercel.app/orderOnline",
-  },
-];
+import menuIcon from "./../assets/icons_assets/mobile-menu-icon.svg";
+import closeIcon from "./../assets/icons_assets/close-menu-icon.svg";
 
 const Nav = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
   return (
-    <nav className="flex-nav">
-      <img alt="logo" src={Logo} />
-      <div className="flex-nav">
-        <ul>
-          <li key={navigation.url}>
-            <a href={navigation.url} target="_blank" rel="noopener noreferrer">
-              Home
-            </a>
-          </li>
-          <li>About</li>
-          <li>Menu</li>
-          <li>Reservations</li>
-        </ul>
-        <button>Order online</button>
-      </div>
+    <nav className="navbar">
+      <img className="logo" alt="logo" src={Logo} />
+      <ul
+        className={isMobile ? "nav-links-mobile" : "nav-links"}
+        onClick={() => setIsMobile(false)}
+      >
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#menu">Menu</a>
+        </li>
+        <li>
+          <a href="#reservations">Reservations</a>
+        </li>
+        <li>
+          <button className="nav-button">Order online</button>
+        </li>
+      </ul>
+      <button
+        className="mobile-menu-icon"
+        onClick={() => setIsMobile(!isMobile)}
+      >
+        <img src={isMobile ? closeIcon : menuIcon} alt="menu-icon" />
+      </button>
     </nav>
   );
 };
