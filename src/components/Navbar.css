@@ -14,6 +14,7 @@
 .nav-links {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .nav-links li {
@@ -24,4 +25,57 @@
   text-decoration: none;
   color: #495e57;
   font-size: 1rem;
+}
+
+.nav-button {
+  background-color: #495e57;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.nav-button:hover {
+  background-color: #d9d9d9;
+}
+
+.mobile-menu-icon img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .nav-links-mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #d9d9d9;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .nav-links-mobile li {
+    margin-bottom: 10px;
+  }
+
+  .nav-links-mobile a {
+    font-size: 1.2rem;
+  }
 }
