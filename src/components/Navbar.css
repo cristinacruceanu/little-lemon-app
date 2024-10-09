@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500&display=swap");
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffff;
+  color: #495e57;
+  position: relative;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #495e57;
+  font-size: 1rem;
+}
