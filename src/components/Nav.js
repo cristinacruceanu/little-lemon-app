@@ -9,33 +9,42 @@ const Nav = () => {
 
   return (
     <nav className="navbar">
-      <img className="logo" alt="logo" src={Logo} />
-      <ul
-        className={isMobile ? "nav-links-mobile" : "nav-links"}
-        onClick={() => setIsMobile(false)}
-      >
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#menu">Menu</a>
-        </li>
-        <li>
-          <a href="#reservations">Reservations</a>
-        </li>
-        <li>
-          <button className="nav-button">Order online</button>
-        </li>
-      </ul>
-      <button
-        className="mobile-menu-icon"
-        onClick={() => setIsMobile(!isMobile)}
-      >
-        <img src={isMobile ? closeIcon : menuIcon} alt="menu-icon" />
-      </button>
+      <div className="nav-container">
+        <div className="logo">
+          <img alt="logo" src={Logo} className="logo-img" />
+        </div>
+
+        <ul
+          className={isMobile ? "nav-links-mobile" : "nav-links"}
+          onClick={() => setIsMobile(false)}
+        >
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#menu">Menu</a>
+          </li>
+          <li>
+            <a href="#reservations">Reservations</a>
+          </li>
+          <li>
+            <a href="#orderonline">Order online</a>
+          </li>
+        </ul>
+
+        <div className="login-button">
+          <button>Login</button>
+        </div>
+        <button
+          className="mobile-menu-icon"
+          onClick={() => setIsMobile(!isMobile)}
+        >
+          <img src={isMobile ? closeIcon : menuIcon} alt="menu-icon" />
+        </button>
+      </div>
     </nav>
   );
 };
