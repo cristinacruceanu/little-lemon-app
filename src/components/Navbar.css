@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width:100%;
+  width: 100%;
   max-width: 1200px;
 }
 
@@ -19,11 +19,10 @@
   align-items: center;
 }
 
-
 .nav-links {
   display: flex;
   gap: 20px;
- padding-left:0;
+  padding-left: 0;
 }
 
 .nav-links li {
@@ -32,15 +31,15 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #495e57;
+  color: #000000;
+  font-weight: bold;
 }
 
-
-.login-button button{
+.login-button button {
   background-color: #495e57;
   color: #fff;
   border: none;
-  padding: 8px 12px;
+  padding: 6px 30px;
   border-radius: 16px;
   cursor: pointer;
   font-size: 1rem;
@@ -53,15 +52,23 @@
 }
 
 .mobile-menu-icon {
-display: none;
- border: none;
-  width: 24px;
-  height: 24px;
+  display: none;
+  border: none;
+  width: 45px;
+  height: 45px;
   cursor: pointer;
+  border-radius: 5px;
+}
+
+.mobile-menu-icon img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
-  .nav-links, .login-button {
+  .nav-links,
+  .login-button {
     display: none;
   }
 
@@ -75,7 +82,7 @@ display: none;
     position: absolute;
     top: 50px;
     right: 0;
-    background-color: #d9d9d9;
+    background-color: #495e57;
     width: 100%;
     height: auto;
     align-items: center;
@@ -84,9 +91,28 @@ display: none;
 
   .nav-links-mobile li {
     margin-bottom: 10px;
+    list-style: none;
   }
 
   .nav-links-mobile a {
     font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
   }
+}
+
+.login-button-mobile {
+  background-color: #f4ce14;
+  color: #000000;
+  border: none;
+  margin-top: 20px;
+  padding: 6px 30px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+.login-button-mobile:hover {
+  background-color: #d3b314;
 }
