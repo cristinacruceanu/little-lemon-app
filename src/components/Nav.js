@@ -33,11 +33,19 @@ const Nav = () => {
           <li>
             <a href="#orderonline">Order online</a>
           </li>
+          {isMobile && (
+            <li>
+              <button className="login-button-mobile">Login</button>
+            </li>
+          )}
         </ul>
 
-        <div className="login-button">
-          <button>Login</button>
-        </div>
+        {!isMobile && (
+          <div className="login-button">
+            <button>Login</button>
+          </div>
+        )}
+
         <button
           className="mobile-menu-icon"
           onClick={() => setIsMobile(!isMobile)}
