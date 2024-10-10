@@ -58,22 +58,20 @@
   height: 45px;
   cursor: pointer;
   border-radius: 5px;
+  display: block;
 }
 
 .mobile-menu-icon img {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
   .nav-links,
   .login-button {
     display: none;
-  }
-
-  .mobile-menu-icon {
-    display: block;
   }
 
   .nav-links-mobile {
