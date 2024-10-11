@@ -53,19 +53,11 @@
 
 .mobile-menu-icon {
   display: none;
+  background: none;
   border: none;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  border-radius: 5px;
-  display: block;
 }
-
 .mobile-menu-icon img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -113,4 +105,21 @@
 }
 .login-button-mobile:hover {
   background-color: #d3b314;
+}
+
+.mobile-menu-icon {
+  display: block;
+  z-index: 1000;
+  width: 45px;
+  height: 45px;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.mobile-menu-icon img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
