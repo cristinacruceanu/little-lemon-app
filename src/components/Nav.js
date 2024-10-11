@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "./Navbar.css";
 import Logo from "./../assets/icons_assets/Logo.svg";
@@ -12,7 +11,9 @@ const Nav = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="logo">
-          <img alt="logo" src={Logo} className="logo-img" />
+          <a href="#home">
+            <img alt="logo" src={Logo} className="logo-img" />
+          </a>
         </div>
 
         <ul
