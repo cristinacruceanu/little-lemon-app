@@ -21,8 +21,9 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 1280px;
   margin: 0 auto; /* Center the container */
+
+  max-width: 1280px;
   padding: 20px;
 }
 
@@ -42,6 +43,11 @@ a:hover {
   display: flex;
   flex: 2;
   justify-content: space-between;
+  text-align: left;
+}
+
+.footer-links-column {
+  margin: 40px;
 }
 
 .footer-links-column ul {
@@ -54,17 +60,22 @@ a:hover {
 }
 
 .footer-contact {
-  flex: 1.5;
+  flex: 1;
   text-align: left;
   display: flex;
   justify-content: flex-end;
+  margin: 40px;
 }
 
 .footer-contact p {
   margin: 5px 0;
 }
+
+.footer-socials {
+  margin-top: 15px;
+}
 .footer-socials a {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .footer-socials img {
@@ -73,11 +84,56 @@ a:hover {
 }
 
 .copyright {
-  margin: 0 auto;
   text-align: center;
+  margin-top: 20px;
   font-size: 14px;
 }
 
 .copyright a {
- font-size: 14px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer-links-column {
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .footer-contact {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .footer-socials a {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-logo-img {
+    max-width: 120px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  a,
+  .copyright,
+  .copyright a {
+    font-size: 12px;
+  }
+  .footer-socials img {
+    width: 20px;
+    height: 20px;
+  }
 }
