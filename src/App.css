@@ -9,6 +9,7 @@
   min-height: 100vh; /* Ensure the container takes full viewport height */
 }
 
+
 /* Main content grows to take the remaining space, pushing the footer down
 .main-content {
   flex-grow: 1;
