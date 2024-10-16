@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: center;
-  padding: 1rem 2rem;
+  padding: 1rem;
   background-color: #ffff;
   color: #495e57;
 }
@@ -17,6 +17,9 @@
 .logo {
   display: flex;
   align-items: center;
+}
+.logo-img {
+  min-height: 50px;
 }
 
 .nav-links {
@@ -39,10 +42,10 @@
   background-color: #495e57;
   color: #fff;
   border: none;
-  padding: 6px 30px;
-  border-radius: 16px;
+  padding: 0.25rem 1rem;
+  border-radius: 16pt;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 18pt;
   transition: background-color 0.3s ease;
   font-weight: bold;
 }
@@ -53,12 +56,7 @@
 
 .mobile-menu-icon {
   display: none;
-  background: none;
   border: none;
-}
-
-.mobile-menu-icon {
-  display: none;
   width: 45px;
   height: 45px;
   background-color: #d9d9d9;
@@ -66,7 +64,7 @@
   border-radius: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-links,
   .login-button {
     display: none;
@@ -76,13 +74,14 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 100px;
     right: 0;
     background-color: #495e57;
     width: 100%;
     height: auto;
     align-items: center;
     padding: 20px 0;
+    z-index: 999;
   }
 
   .nav-links-mobile li {
@@ -91,7 +90,7 @@
   }
 
   .nav-links-mobile a {
-    font-size: 1.2rem;
+    font-size: 16pt;
     text-decoration: none;
     color: #fff;
   }
@@ -101,10 +100,10 @@
     color: #000000;
     border: none;
     margin-top: 20px;
-    padding: 6px 30px;
-    border-radius: 16px;
+    padding: 0.25rem 1rem;
+    border-radius: 16pt;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 16pt;
     transition: background-color 0.3s ease;
     font-weight: bold;
   }

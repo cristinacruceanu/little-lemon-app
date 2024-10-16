@@ -1,17 +1,58 @@
 .cta-container {
-  background-color:#495e57;
-display: flex;
-justify-content: center;
-padding: 1rem 2rem;
+  background-color: #495e57;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .cta-content {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1280px;
 }
-.cta-image
- {width: 200px;
-height: auto;}
+.cta-image {
+  width: 200px;
+  height: auto;
+}
+.cta-title,
+.cta-location {
+  font-family: "Markazi Text";
+  line-height: 1;
+}
+.cta-title {
+  font-size: 60pt;
+  color: #f4ce14;
+  font-weight: normal;
+  opacity: 80%;
+  margin: 0;
+}
+.cta-location {
+  font-size: 40pt;
+  color: #fff;
+  margin: 0;
+  font-weight: normal;
+}
+.cta-description {
+  font-size: 18pt;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 30ch;
+  white-space: normal;
+}
+
+/*Limits the width to approximately 50 characters per line.*/
+/*white-space: normal;: Ensures that text will wrap onto the next line when the limit is reached.*/
+
+.cta-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #f4ce14;
+  color:#000;
+ border:none;
+ border-radius: 16pt;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+ font-weight: bold;
+ margin-top:1rem;
+}
