@@ -56,3 +56,10 @@
  font-weight: bold;
  margin-top:1rem;
 }
+.cta-image {
+  position: absolute;
+ right:0;
+  top: 50%;
+  max-width: 40%;
+  padding:10px;
+}
