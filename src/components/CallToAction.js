@@ -24,7 +24,7 @@ const CallToAction = ({
         </div>
 
         {imageUrl && (
-            <img src={imageUrl} alt={imageAlt} className="cta-image" />
+          <img src={imageUrl} alt={imageAlt} className="cta-image" />
         )}
       </div>
     </section>

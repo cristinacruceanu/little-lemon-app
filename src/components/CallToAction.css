@@ -1,8 +1,9 @@
 .cta-container {
   background-color: #495e57;
   display: flex;
-  justify-content: center;
+   align-items: center;
   padding: 1rem;
+  overflow: visible;
 }
 
 .cta-content {
@@ -11,11 +12,9 @@
   align-items: center;
   width: 100%;
   max-width: 1280px;
+    margin: 0 auto;
 }
-.cta-image {
-  width: 200px;
-  height: auto;
-}
+
 .cta-title,
 .cta-location {
   font-family: "Markazi Text";
@@ -48,18 +47,22 @@
 .cta-button {
   padding: 0.5rem 1.5rem;
   background-color: #f4ce14;
-  color:#000;
- border:none;
- border-radius: 16pt;
- cursor: pointer;
- transition: background-color 0.3s ease;
- font-weight: bold;
- margin-top:1rem;
+  color: #000;
+  border: none;
+  border-radius: 16pt;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  margin-top: 1rem;
 }
+
 .cta-image {
-  position: absolute;
- right:0;
-  top: 50%;
-  max-width: 40%;
-  padding:10px;
+  bottom: -80px;
+ max-width:40%;
+  height: auto;
+  margin-bottom: -10%;
+  border-radius: 16pt;
+  z-index: 998;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
