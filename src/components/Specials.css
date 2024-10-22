@@ -1,0 +1,46 @@
+.specials-section {
+  margin-top: 4rem;
+  padding: 1rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2rem;
+
+}
+
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+align-items: center;
+  width:100%;
+  max-width:1280px;
+}
+.specials-header h1{
+font-family: "Markazi Text";
+  font-size: 40pt;
+font-weight: normal;
+
+}
+
+.specials-button {
+    padding: 0.75rem 1.5rem;
+  background-color: #f4ce14;
+  border: none;
+  border-radius: 16pt;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.specials-button:hover{
+background-color:#d3b314;
+}
+
+.specials-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1280px;
+}
