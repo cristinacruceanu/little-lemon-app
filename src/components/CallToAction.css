@@ -55,9 +55,12 @@
   font-weight: bold;
   margin-top: 1rem;
 }
+.cta-button:hover{
+background-color:#d3b314;
+}
 
 .cta-image {
-  bottom: -80px;
+
  max-width:40%;
   height: auto;
   margin-bottom: -10%;
