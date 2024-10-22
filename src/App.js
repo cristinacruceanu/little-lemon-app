@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import CallToAction from "./components/CallToAction";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Specials from "./components/Specials.js";
 import imageUrl from "./assets/icons_assets/restaurant-food.jpg";
 
 function App() {
@@ -13,6 +14,26 @@ function App() {
   const handleClick = () => {
     alert("CTA Button Clicked!");
   };
+  const weeklySpecials = [
+    {
+      dishName: "Greek Salad",
+      imageSrc: "./assets/icons_assets/greek-salad.jpg",
+      description: "Crispy lettuce, peppers, olives, feta cheese.",
+      price: 12.99,
+    },
+    {
+      dishName: "Bruschetta",
+      imageSrc: "./assets/icons_assets/bruschetta.svg",
+      description: "Grilled bread, garlic, tomatoes, olive oil.",
+      price: 7.99,
+    },
+    {
+      dishName: "Lemon Dessert",
+      imageSrc: "./assets/icons_assets/lemon-dessert.jpg",
+      description: "Sweet and sour, deliciously lemony dessert.",
+      price: 5.49,
+    },
+  ];
   return (
     <div className="page-container">
       <Header>
@@ -28,6 +49,11 @@ function App() {
           imageUrl={imageUrl}
           imageAlt="Restaurant food"
         ></CallToAction>
+        <Specials
+          sectionTitle="This weeks specials!"
+          buttonText="Online Menu"
+          specials={weeklySpecials}
+        />
       </Main>
       <Footer />
     </div>
