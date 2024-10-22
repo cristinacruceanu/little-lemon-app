@@ -94,6 +94,10 @@
     text-decoration: none;
     color: #fff;
   }
+  .nav-links-mobile a:hover {
+
+    color: #f4ce14;
+  }
 
   .login-button-mobile {
     background-color: #f4ce14;
