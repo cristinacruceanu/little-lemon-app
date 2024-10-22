@@ -5,7 +5,11 @@ import CallToAction from "./components/CallToAction";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Specials from "./components/Specials.js";
-import imageUrl from "./assets/icons_assets/restaurant-food.jpg";
+import ImageUrl from "./assets/icons_assets/restaurant-food.jpg";
+import GreekSalad from "./assets/icons_assets/greek-salad.jpg";
+import Bruschetta from "./assets/icons_assets/bruschetta.svg";
+import LemonDessert from "./assets/icons_assets/lemon-dessert.jpg";
+import OrderIcon from "./assets/icons_assets/motorcycle.png";
 
 function App() {
   /*useEffect(() => {
@@ -14,22 +18,26 @@ function App() {
   const handleClick = () => {
     alert("CTA Button Clicked!");
   };
+
+  const handleOrder = () => {
+    console.log("Order placed!");
+  };
   const weeklySpecials = [
     {
       dishName: "Greek Salad",
-      imageSrc: "./assets/icons_assets/greek-salad.jpg",
+      imageSrc: GreekSalad,
       description: "Crispy lettuce, peppers, olives, feta cheese.",
       price: 12.99,
     },
     {
       dishName: "Bruschetta",
-      imageSrc: "./assets/icons_assets/bruschetta.svg",
+      imageSrc: Bruschetta,
       description: "Grilled bread, garlic, tomatoes, olive oil.",
       price: 7.99,
     },
     {
       dishName: "Lemon Dessert",
-      imageSrc: "./assets/icons_assets/lemon-dessert.jpg",
+      imageSrc: LemonDessert,
       description: "Sweet and sour, deliciously lemony dessert.",
       price: 5.49,
     },
@@ -46,13 +54,16 @@ function App() {
           description="We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist."
           buttonText="Reserve a  table"
           onButtonClick={handleClick}
-          imageUrl={imageUrl}
+          imageUrl={ImageUrl}
           imageAlt="Restaurant food"
         ></CallToAction>
         <Specials
           sectionTitle="This weeks specials!"
           buttonText="Online Menu"
           specials={weeklySpecials}
+          onAction={handleOrder}
+          actionText="Order a delivery"
+          icon={<img src={OrderIcon} alt="DeliveryIcon" />}
         />
       </Main>
       <Footer />
