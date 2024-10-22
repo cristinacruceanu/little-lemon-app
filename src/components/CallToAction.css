@@ -61,11 +61,11 @@ background-color:#d3b314;
 
 .cta-image {
 
- max-width:40%;
+ max-width:35%;
   height: auto;
   margin-bottom: -10%;
   border-radius: 16pt;
   z-index: 998;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1/1.1;
   object-fit: cover;
 }
