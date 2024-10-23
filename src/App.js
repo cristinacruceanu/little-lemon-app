@@ -10,6 +10,10 @@ import GreekSalad from "./assets/icons_assets/greek-salad.jpg";
 import Bruschetta from "./assets/icons_assets/bruschetta.svg";
 import LemonDessert from "./assets/icons_assets/lemon-dessert.jpg";
 import OrderIcon from "./assets/icons_assets/motorcycle.png";
+import Testimonials from "./components/Testimonials";
+import JohnDoe from "./assets/icons_assets/john-doe.jpg";
+import JaneSmith from "./assets/icons_assets/jane-smith.jpg";
+import CarlosSantana from "./assets/icons_assets/carlos-santana.jpg";
 
 function App() {
   /*useEffect(() => {
@@ -31,7 +35,7 @@ function App() {
     },
     {
       dishName: "Bruschetta",
-     imageSrc: Bruschetta,
+      imageSrc: Bruschetta,
       description: "Grilled bread, garlic, tomatoes, olive oil.",
       price: 7.99,
     },
@@ -40,6 +44,26 @@ function App() {
       imageSrc: LemonDessert,
       description: "Sweet and sour, deliciously lemony dessert.",
       price: 5.49,
+    },
+  ];
+  const testimonialsData = () => [
+    {
+      customerName: "John Doe",
+      customerImage: JohnDoe,
+      feedback: "The service was excellent and the food was delicious!",
+      location: "New York, USA",
+    },
+    {
+      customerName: "Jane Smith",
+      customerImage: JaneSmith,
+      feedback: "Amazing experience! Will definitely return.",
+      location: "London, UK",
+    },
+    {
+      customerName: "Carlos Santana",
+      customerImage: CarlosSantana,
+      feedback: "The best Mediterranean restaurant I have ever been to!",
+      location: "Madrid, Spain",
     },
   ];
   return (
@@ -56,7 +80,7 @@ function App() {
           onButtonClick={handleClick}
           imageUrl={ImageUrl}
           imageAlt="Restaurant food"
-        ></CallToAction>
+        />
         <Specials
           sectionTitle="This weeks specials!"
           buttonText="Online Menu"
@@ -64,6 +88,10 @@ function App() {
           onAction={handleOrder}
           actionText="Order a delivery"
           icon={<img src={OrderIcon} alt="DeliveryIcon" />}
+        />
+        <Testimonials
+          title="What Our Customers Say"
+          testimonials={testimonialsData}
         />
       </Main>
       <Footer />
