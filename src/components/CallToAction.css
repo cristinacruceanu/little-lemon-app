@@ -1,7 +1,7 @@
 .cta-container {
   background-color: #495e57;
   display: flex;
-   align-items: center;
+  align-items: center;
   padding: 1rem;
   overflow: visible;
 }
@@ -12,7 +12,7 @@
   align-items: center;
   width: 100%;
   max-width: 1280px;
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .cta-title,
@@ -55,13 +55,12 @@
   font-weight: bold;
   margin-top: 1rem;
 }
-.cta-button:hover{
-background-color:#d3b314;
+.cta-button:hover {
+  background-color: #d3b314;
 }
 
 .cta-image {
-
- max-width:35%;
+  max-width: 35%;
   height: auto;
   margin-bottom: -10%;
   border-radius: 16pt;
@@ -70,46 +69,54 @@ background-color:#d3b314;
   object-fit: cover;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .cta-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.cta-text{display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cta-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cta-description {
+    text-align: center;
+  }
 
-.cta-image {
-   max-width:300px;
-margin-bottom: -10%;
-margin-top: 2rem;
-
-}
+  .cta-image {
+    max-width: 300px;
+    margin-bottom: -10%;
+    margin-top: 2rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .cta-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
- }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta-description {
+    text-align: center;
+  }
 
   .cta-title {
-
-    font-size:45pt;
+    font-size: 45pt;
   }
   .cta-location {
     font-size: 30pt;
   }
-.cta-button {
-  margin-top:0;
-}
+  .cta-button {
+    margin-top: 0;
+  }
   .cta-image {
-   max-width:200px;
-   margin-top: 1.2rem;
-margin-bottom: -15%;}
+    max-width: 200px;
+    margin-top: 1.2rem;
+    margin-bottom: -15%;
+  }
 }
