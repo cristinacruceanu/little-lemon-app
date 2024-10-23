@@ -31,7 +31,7 @@ function App() {
     },
     {
       dishName: "Bruschetta",
-      imageSrc: Bruschetta,
+     imageSrc: Bruschetta,
       description: "Grilled bread, garlic, tomatoes, olive oil.",
       price: 7.99,
     },
