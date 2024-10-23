@@ -122,13 +122,4 @@ a:hover {
   .footer-logo-img {
     max-width: 120px;
   }
-  a,
-  .copyright,
-  .copyright a {
-    font-size: 12px;
-  }
-  .footer-socials img {
-    width: 20px;
-    height: 20px;
-  }
 }
