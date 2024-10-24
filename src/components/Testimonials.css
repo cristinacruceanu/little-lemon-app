@@ -1,0 +1,38 @@
+.testimonials-section {
+  padding: 1rem;
+  background-color: #495e57;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonials-title {
+  font-family: "Markazi Text";
+  font-weight: normal;
+  font-size: 60pt;
+  margin-bottom: 2rem;
+  text-align: left;
+  width: 100%;
+  max-width: 1280px;
+  color: #f4ce14;
+    opacity: 80%;
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1280px;
+  gap: 2rem;
+
+
+}
+
+@media screen and (max-width: 1024px) {
+.testimonials-title{
+  text-align: center;
+   font-size: 40pt;
+}
+}

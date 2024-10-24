@@ -1,0 +1,57 @@
+.testimonial-card {
+  color: #fff;
+  margin-bottom: 4rem;
+}
+.testimonials-img-box {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16pt;
+}
+.customer-image {
+  min-height: 150px;
+  width: auto;
+  height: 100%;
+}
+
+.customer-name {
+  font-family: "Markazi Text";
+  font-weight: normal;
+  font-size: 25pt;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.customer-location {
+  font-size: 14pt;
+  margin: 0;
+}
+
+.feedback {
+  max-width: 20ch;
+  font-style: italic;
+  line-height: 1.5;
+}
+.star {
+  font-size: 1.2rem;
+  color: #fff;
+
+}
+
+.star.filled {
+  color: #f4ce14;
+}
+
+@media screen and (max-width: 1024px) {
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+}
