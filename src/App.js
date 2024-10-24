@@ -46,24 +46,27 @@ function App() {
       price: 5.49,
     },
   ];
-  const testimonialsData = () => [
+  const testimonialsData = [
     {
       customerName: "John Doe",
       customerImage: JohnDoe,
       feedback: "The service was excellent and the food was delicious!",
       location: "New York, USA",
+      rating:5,
     },
     {
       customerName: "Jane Smith",
       customerImage: JaneSmith,
-      feedback: "Amazing experience! Will definitely return.",
+      feedback: "Very satisfied with the experience.",
       location: "London, UK",
+      rating:4,
     },
     {
       customerName: "Carlos Santana",
       customerImage: CarlosSantana,
       feedback: "The best Mediterranean restaurant I have ever been to!",
       location: "Madrid, Spain",
+      rating:5,
     },
   ];
   return (
@@ -90,7 +93,7 @@ function App() {
           icon={<img src={OrderIcon} alt="DeliveryIcon" />}
         />
         <Testimonials
-          title="What Our Customers Say"
+          title="What our customers say"
           testimonials={testimonialsData}
         />
       </Main>
