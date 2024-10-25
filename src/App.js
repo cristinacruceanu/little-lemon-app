@@ -1,3 +1,5 @@
+import React from "react";
+import {useNavigate} from  "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
@@ -20,7 +22,7 @@ function App() {
     document.title = "Little Lemon App";
   }, []);*/
   const handleClick = () => {
-    alert("CTA Button Clicked!");
+   navigate("/src/pages/ReserveTable.js");
   };
 
   const handleOrder = () => {
@@ -52,21 +54,21 @@ function App() {
       customerImage: JohnDoe,
       feedback: "The service was excellent and the food was delicious!",
       location: "New York, USA",
-      rating:5,
+      rating: 5,
     },
     {
       customerName: "Jane Smith",
       customerImage: JaneSmith,
       feedback: "Very satisfied with the experience.",
       location: "London, UK",
-      rating:4,
+      rating: 4,
     },
     {
       customerName: "Carlos Santana",
       customerImage: CarlosSantana,
       feedback: "The best Mediterranean restaurant I have ever been to!",
       location: "Madrid, Spain",
-      rating:5,
+      rating: 5,
     },
   ];
   return (
@@ -79,7 +81,7 @@ function App() {
           title="Little Lemon"
           location="Chicago"
           description="We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist."
-          buttonText="Reserve a  table"
+          buttonText="Reserve a table"
           onButtonClick={handleClick}
           imageUrl={ImageUrl}
           imageAlt="Restaurant food"

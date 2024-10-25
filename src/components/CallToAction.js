@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./CallToAction.css";
+import "./../styles/CallToAction.css";
 
 const CallToAction = ({
   title,
