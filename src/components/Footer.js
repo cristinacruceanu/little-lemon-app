@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "./../styles/Footer.css";
 import FooterLogo from "./../assets/icons_assets/footer-logo.png";
 import FacebookIcon from "./../assets/icons_assets/facebook-icon.svg";
 import InstagramIcon from "./../assets/icons_assets/instagram-icon.svg";

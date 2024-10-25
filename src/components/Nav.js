@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Nav.css";
+import "./../styles/Nav.css";
 import Logo from "./../assets/icons_assets/Logo.svg";
 import menuIcon from "./../assets/icons_assets/mobile-menu-icon.svg";
 import closeIcon from "./../assets/icons_assets/close-menu-icon.svg";

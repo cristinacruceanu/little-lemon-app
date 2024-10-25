@@ -1,5 +1,5 @@
 import React from "react";
-import "./Specials.css";
+import "./../styles/Specials.css";
 import SpecialCard from "./SpecialCard.js";
 
 const Specials = ({ sectionTitle, buttonText, specials,onAction, actionText,icon }) => {

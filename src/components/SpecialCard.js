@@ -1,5 +1,5 @@
 import React from "react";
-import "./SpecialCard.css";
+import "./../styles/SpecialCard.css";
 
 const SpecialCard = ({
   dishName,
