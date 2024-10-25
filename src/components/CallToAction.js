@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import "./../styles/CallToAction.css";
 
 const CallToAction = ({
@@ -7,10 +8,13 @@ const CallToAction = ({
   location,
   description,
   buttonText,
-  onButtonClick,
   imageUrl,
   imageAlt,
 }) => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/reserve-table");
+  };
   return (
     <section className="cta-container">
       <div className="cta-content">
@@ -18,7 +22,7 @@ const CallToAction = ({
           <h2 className="cta-title">{title}</h2>
           <h3 className="cta-location">{location}</h3>
           <p className="cta-description">{description}</p>
-          <button className="cta-button" onClick={onButtonClick}>
+          <button className="cta-button" onClick={handleNavigate}>
             {buttonText}
           </button>
         </div>
@@ -36,7 +40,6 @@ CallToAction.propTypes = {
   location: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  onButtonClick: PropTypes.func.isRequired,
   imageUrl: PropTypes.string,
   imageAlt: PropTypes.string,
 };
