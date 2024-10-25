@@ -3,11 +3,7 @@
   font-size: 18pt;
 }
 
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensure the container takes full viewport height */
-}
+
 
 
 /* Main content grows to take the remaining space, pushing the footer down
