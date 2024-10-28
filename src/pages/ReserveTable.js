@@ -1,9 +1,33 @@
 import React from "react";
-import "./../styles/ReserveTable.css";
+import "./../styles/Reservation/ReserveTable.css";
+import Header from "./../components/Header";
+import Footer from "./../components/Footer";
+import ReservationTitle from "../components/Reservation/ReservationTitle";
+import ReservationImages from "../components/Reservation/ReservationImages";
+import ReservationForm from "../components/Reservation/ReservationForm";
+import ReservationButton from "../components/Reservation/ReservationButton";
+import RestaurantImg from "./../assets/icons_assets/restaurant.jpg";
+import ChefBImg from "./../assets/icons_assets/restaurant-chef-b.jpg";
 
-const ReserveTable = ()=> {
+const ReserveTable = () => {
   return (
-    <div>Abc</div>
+    <div className="reserve-page">
+      <Header />
+      <main>
+        <ReservationTitle
+          title="Little Lemon"
+          subtitle="Chicago"
+          description="Find a table for any occasion"
+        />
+        <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
+        <ReservationForm />
+        <ReservationButton
+          label="Next"
+          onClick={() => console.log("Go to next page")}
+        />
+      </main>
+      <Footer />
+    </div>
   );
 };
 export default ReserveTable;
