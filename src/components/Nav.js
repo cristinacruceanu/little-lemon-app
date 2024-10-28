@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./../styles/Nav.css";
+import { useNavigate } from "react-router-dom";
 import Logo from "./../assets/icons_assets/Logo.svg";
 import menuIcon from "./../assets/icons_assets/mobile-menu-icon.svg";
 import closeIcon from "./../assets/icons_assets/close-menu-icon.svg";
 
 const Nav = () => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/");
+  };
   const [isMobile, setIsMobile] = useState(false);
   const handleResize = () => {
     if (window.innerWidth > 768) {
@@ -32,7 +37,9 @@ const Nav = () => {
           onClick={() => setIsMobile(false)}
         >
           <li>
-            <a href="#home">Home</a>
+            <a href="#home" onClick={handleNavigate}>
+              Home
+            </a>
           </li>
           <li>
             <a href="#about">About</a>
