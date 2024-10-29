@@ -1,5 +1,5 @@
 import React from "react";
-import "./../../styles/Reservation/ReservationCheckbox.css";
+import "./../../styles/Reservation/Reservation.css";
 
 const ReservationCheckbox = ({ label, name }) => {
   return (

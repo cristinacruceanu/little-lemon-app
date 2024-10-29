@@ -1,0 +1,49 @@
+.reserve-page-container {
+  background-color: #495e57;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reserve-page-content {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.reservation-images-container {
+  max-width: 1280px;
+  width: 100%;
+}
+.reservation-images1,
+.reservation-images2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.reservation-image {
+  min-height: 300px;
+  width: auto;
+  height: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.reservation-field label,
+.reservation-checkbox label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}

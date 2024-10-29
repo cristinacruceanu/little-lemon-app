@@ -1,5 +1,5 @@
 import React from "react";
-import "./../styles/Reservation/ReserveTable.css";
+import "./../styles/Reservation/Reservation.css";
 import Header from "./../components/Header";
 import Footer from "./../components/Footer";
 import ReservationTitle from "../components/Reservation/ReservationTitle";
@@ -14,20 +14,25 @@ const ReserveTable = () => {
     <div className="reserve-page">
       <Header />
       <main className="reserve-page-container">
-        <div className="reservation-content">
-          <ReservationTitle
-            title="Little Lemon"
-            subtitle="Chicago"
-            description="Find a table for any occasion"
-          />
-          <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
-          <ReservationForm />
-          <ReservationButton
-            label="Next"
-            onClick={() => console.log("Go to next page")}
-          />
+        <div className="reserve-page-content">
+          <div className="reserve-content-left">
+            <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
+          </div>
+          <div className="reserve-content-right">
+            <ReservationTitle
+              title="Little Lemon"
+              subtitle="Chicago"
+              description="Find a table for any occasion"
+            />
+            <ReservationForm />
+          </div>
         </div>
+        <ReservationButton
+          label="Next"
+          onClick={() => console.log("Go to next page")}
+        />
       </main>
+
       <Footer />
     </div>
   );

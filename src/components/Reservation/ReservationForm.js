@@ -1,5 +1,5 @@
 import React from "react";
-import "./../../styles/Reservation/ReservationForm.css";
+import "./../../styles/Reservation/Reservation.css";
 import ReservationField from "./../Reservation/ReservationField";
 import ReservationCheckbox from "./../Reservation/ReservationCheckbox";
 
@@ -12,7 +12,7 @@ const ReservationForm = () => {
         <ReservationField label="Date" type="date" name="date" />{" "}
         <ReservationField label="Time" type="time" name="time" />
       </div>
-      <div className="form-row">
+      <div className="form-column">
         <ReservationField
           label="Number of Diners"
           type="number"
@@ -21,7 +21,7 @@ const ReservationForm = () => {
         />{" "}
         <ReservationField label="Occasion" type="text" name="occasion" />
       </div>
-      <ReservationCheckbox label="Outdoor Seating" name="outdoorSeating"/>
+      <ReservationCheckbox label="Outdoor Seating" name="outdoorSeating" />
     </form>
   );
 };
