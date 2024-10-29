@@ -3,11 +3,11 @@ import "./../../styles/Reservation/ReservationTitle.css";
 
 const ReservationTitle = ({title,subtitle,description}) => {
   return (
-    <>
-      <h1 className="reservation-title">{title}</h1>
-      <h2 className="reservation-subtitle">{subtitle}</h2>
+    <div className="reservation-title">
+      <h1 className="restaurant-title">{title}</h1>
+      <h2 className="restaurant-location">{subtitle}</h2>
       <p className="description">{description}</p>
-    </>
+    </div>
   );
 };
 

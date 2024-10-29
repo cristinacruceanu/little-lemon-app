@@ -28,7 +28,12 @@ const Nav = () => {
       <div className="nav-container">
         <div className="logo">
           <a href="#home">
-            <img alt="logo" src={Logo} className="logo-img" />
+            <img
+              alt="logo"
+              src={Logo}
+              className="logo-img"
+              onClick={handleNavigate}
+            />
           </a>
         </div>
 
