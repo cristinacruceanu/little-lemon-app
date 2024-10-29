@@ -19,9 +19,9 @@ const CallToAction = ({
     <section className="cta-container">
       <div className="cta-content">
         <div className="cta-text">
-          <h2 className="cta-title">{title}</h2>
-          <h3 className="cta-location">{location}</h3>
-          <p className="cta-description">{description}</p>
+          <h2 className="restaurant-title">{title}</h2>
+          <h3 className="restaurant-location">{location}</h3>
+          <p className="description">{description}</p>
           <button className="cta-button" onClick={handleNavigate}>
             {buttonText}
           </button>

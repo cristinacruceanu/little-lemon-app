@@ -3,7 +3,31 @@
   font-size: 18pt;
 }
 
+.restaurant-title,.restaurant-location {
+   font-family: "Markazi Text";
+  line-height: 1;
+}
+ .restaurant-title {
+      font-size: 60pt;
+  color: #f4ce14;
+  font-weight: normal;
+  opacity: 80%;
+  margin: 0;
+  }
 
+  .restaurant-location {
+     font-size: 40pt;
+  color: #fff;
+  margin: 0;
+  font-weight: normal;
+  }
+  .description {
+  font-size: 18pt;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 30ch;
+  white-space: normal;
+}
 
 
 /* Main content grows to take the remaining space, pushing the footer down

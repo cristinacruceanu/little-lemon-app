@@ -13,18 +13,20 @@ const ReserveTable = () => {
   return (
     <div className="reserve-page">
       <Header />
-      <main>
-        <ReservationTitle
-          title="Little Lemon"
-          subtitle="Chicago"
-          description="Find a table for any occasion"
-        />
-        <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
-        <ReservationForm />
-        <ReservationButton
-          label="Next"
-          onClick={() => console.log("Go to next page")}
-        />
+      <main className="reserve-page-container">
+        <div className="reservation-content">
+          <ReservationTitle
+            title="Little Lemon"
+            subtitle="Chicago"
+            description="Find a table for any occasion"
+          />
+          <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
+          <ReservationForm />
+          <ReservationButton
+            label="Next"
+            onClick={() => console.log("Go to next page")}
+          />
+        </div>
       </main>
       <Footer />
     </div>
