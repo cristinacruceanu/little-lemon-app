@@ -1,5 +1,5 @@
 import React from "react";
-import "./../../styles/Reservation/ReservationTitle.css";
+import "./../../styles/Reservation/Reservation.css";
 
 const ReservationTitle = ({title,subtitle,description}) => {
   return (
