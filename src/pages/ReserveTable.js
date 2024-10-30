@@ -14,18 +14,14 @@ const ReserveTable = () => {
     <div className="reserve-page">
       <Header />
       <main className="reserve-page-container">
-        <div className="reserve-page-content">
-          <div className="reserve-content-left">
-            <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
-          </div>
-          <div className="reserve-content-right">
-            <ReservationTitle
-              title="Little Lemon"
-              subtitle="Chicago"
-              description="Find a table for any occasion"
-            />
-            <ReservationForm />
-          </div>
+        <ReservationTitle
+          title="Little Lemon"
+          subtitle="Chicago"
+          description="Find a table for any occasion"
+        />
+        <div className="reservation-content">
+          <ReservationForm />
+          <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
         </div>
         <ReservationButton
           label="Next"

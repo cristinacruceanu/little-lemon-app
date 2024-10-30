@@ -5,45 +5,81 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-
-.reserve-page-content {
-  max-width: 1280px;
-  width: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
-.reservation-images-container {
+
+.reservation-content {
+  display: flex;
+    flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
   max-width: 1280px;
   width: 100%;
 }
-.reservation-images1,
-.reservation-images2 {
+
+.reservation-title {
+  width: 100%;
+  max-width: 1280px;
+}
+.reservation-images-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex: 1;
+  align-items: flex-start;
+}
+.reservation-images {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 350px;
   overflow: hidden;
-  margin-top: 1rem;
 }
 
 .reservation-image {
-  min-height: 300px;
+  min-height: 350px;
   width: auto;
   height: 100%;
+  align-items: center;
+}
+
+.reservation-form {
+  flex: 1;
 }
 
 .form-row {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
 }
-
+.reservation-field input {
+  width: 100%;
+  border-radius: 4pt;
+  border: none;
+   margin-bottom: 0.5rem;
+}
 .reservation-field label,
-.reservation-checkbox label {
+.reservation-radio-label, .reservation-radio-group p  {
   font-weight: bold;
   display: block;
-  margin-bottom: 5px;
+  margin-top:0;
+  margin-bottom: 0.5rem;
+}
+
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+.reservation-radio-label {
+  font-size:14pt;
+ margin-bottom: 0.5rem;
+
+}
+.reservation-button {
+  margin-top: 4rem;
+}
+
+@media screen and (max-width: 1024px) {
+ .reservation-images-container {
+  flex-wrap:wrap;
+ }
 }
