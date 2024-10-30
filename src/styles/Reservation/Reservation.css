@@ -64,14 +64,27 @@
   display: block;
   margin-top:0;
   margin-bottom: 0.5rem;
+  color:#fff;
 }
 
 input[type="radio"] {
   margin-right: 0.5rem;
+  accent-color: #f4ce14;
 }
+/*input[type="date"]{
+   font-weight: bold;
+   color:#f4ce14;
+}
+input[type="time"]{
+
+  font-weight: bold;
+}
+  */
+
 .reservation-radio-label {
   font-size:14pt;
  margin-bottom: 0.5rem;
+ font-weight: normal;
 
 }
 .reservation-button {
