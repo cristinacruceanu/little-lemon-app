@@ -1,9 +1,7 @@
 import React from "react";
 import "./../../styles/Reservation/Reservation.css";
 import ReservationField from "./../Reservation/ReservationField";
-import ReservationCheckbox from "./../Reservation/ReservationCheckbox";
-
-
+import ReservationRadioGroup from "./ReservationRadioGroup";
 
 const ReservationForm = () => {
   return (
@@ -20,8 +18,8 @@ const ReservationForm = () => {
           min="1"
         />{" "}
         <ReservationField label="Occasion" type="text" name="occasion" />
+        <ReservationRadioGroup options={["Standard", "Outside"]} />
       </div>
-      <ReservationCheckbox label="Outdoor Seating" name="outdoorSeating" />
     </form>
   );
 };

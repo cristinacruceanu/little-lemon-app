@@ -4,10 +4,10 @@ import "./../../styles/Reservation/Reservation.css";
 const ReservationImages = ({ image1,image2 }) => {
   return (
     <div className="reservation-images-container">
-      <div className="reservation-images1">
+      <div className="reservation-images">
         <img src={image1} alt="Restaurant" className="reservation-image" />
       </div>
-      <div className="reservation-images2">
+      <div className="reservation-images">
         <img src={image2} alt="Chef Adrian " className="reservation-image" />
       </div>
     </div>
