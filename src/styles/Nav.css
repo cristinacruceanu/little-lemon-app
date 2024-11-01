@@ -38,21 +38,6 @@
   font-weight: bold;
 }
 
-.login-button button {
-  background-color: #495e57;
-  color: #fff;
-  border: none;
-  padding: 0.25rem 1rem;
-  border-radius: 16pt;
-  cursor: pointer;
-  font-size: 18pt;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
-}
-
-.login-button button:hover {
-  background-color: #24302c;
-}
 
 .mobile-menu-icon {
   display: none;
@@ -99,21 +84,6 @@
     color: #f4ce14;
   }
 
-  .login-button-mobile {
-    background-color: #f4ce14;
-    color: #000000;
-    border: none;
-    margin-top: 20px;
-    padding: 0.25rem 1rem;
-    border-radius: 16pt;
-    cursor: pointer;
-    font-size: 16pt;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-  }
-  .login-button-mobile:hover {
-    background-color: #d3b314;
-  }
   .mobile-menu-icon {
     display: block;
   }

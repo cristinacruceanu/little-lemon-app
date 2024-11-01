@@ -20,20 +20,6 @@
   font-weight: normal;
 }
 
-.specials-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #f4ce14;
-  color:#000;
-  border: none;
-  border-radius: 16pt;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
-}
-
-.specials-button:hover {
-  background-color: #d3b314;
-}
 
 .specials-card-container {
   display: flex;
@@ -48,11 +34,6 @@
 @media screen and (max-width: 1024px) {
   .specials-header h1 {
     font-size: 40pt;
-  }
-  .specials-button {
-  padding: 0.25rem 1rem;
-     border-radius: 14pt;
-    font-size:16pt;
   }
 
   .specials-card-container {
