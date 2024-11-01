@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Logo from "./../assets/icons_assets/Logo.svg";
 import menuIcon from "./../assets/icons_assets/mobile-menu-icon.svg";
 import closeIcon from "./../assets/icons_assets/close-menu-icon.svg";
+import Button from "./Button";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -60,14 +61,14 @@ const Nav = () => {
           </li>
           {isMobile && (
             <li>
-              <button className="login-button-mobile">Login</button>
+              <Button variant="primary">Login</Button>
             </li>
           )}
         </ul>
 
         {!isMobile && (
           <div className="login-button">
-            <button>Login</button>
+            <Button variant="secondary">Login</Button>
           </div>
         )}
 

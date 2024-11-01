@@ -19,20 +19,6 @@
 /*Limits the width to approximately 50 characters per line.*/
 /*white-space: normal;: Ensures that text will wrap onto the next line when the limit is reached.*/
 
-.cta-button {
-  padding: 0.5rem 1.5rem;
-  background-color: #f4ce14;
-  color: #000;
-  border: none;
-  border-radius: 16pt;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-.cta-button:hover {
-  background-color: #d3b314;
-}
 
 .cta-image {
   max-width: 35%;
@@ -85,9 +71,6 @@
   }
   .cta-location {
     font-size: 30pt;
-  }
-  .cta-button {
-    margin-top: 0;
   }
   .cta-image {
     max-width: 200px;

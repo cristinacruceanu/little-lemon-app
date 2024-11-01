@@ -22,9 +22,9 @@ const Button = ({
         <span className="loader" />
       ) : (
         <>
-          {icon && <span className="btn-icon">{icon}</span>}{" "}
-          {/* Optional Icon */}
           {children}
+          {/*  {icon && <span className="btn-icon">{icon}</span>}{" "}
+          Optional Icon */}
         </>
       )}
     </button>
@@ -35,10 +35,10 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
   type: PropTypes.oneOf(["button", "submit", "reset"]),
-  variant: PropTypes.oneOf(["primary","secondary","danger"]),
-  isLoading: PropTypes.bool,
+  variant: PropTypes.oneOf(["primary", "secondary", "danger"]),
+  /*isLoading: PropTypes.bool,*/
   disabled: PropTypes.bool,
-  icon: PropTypes.node,
+  /* icon: PropTypes.node,*/
 };
 
 export default Button;

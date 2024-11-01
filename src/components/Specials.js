@@ -1,13 +1,14 @@
 import React from "react";
 import "./../styles/Specials.css";
 import SpecialCard from "./SpecialCard.js";
+import Button from "./Button";
 
 const Specials = ({ sectionTitle, buttonText, specials,onAction, actionText,icon }) => {
   return (
     <section className="specials-section">
       <div className="specials-header">
         <h1>{sectionTitle}</h1>
-        <button className="specials-button">{buttonText}</button>
+        <Button variant="primary">{buttonText}</Button>
       </div>
       <div className="specials-card-container">
         {specials.map((special, index) => (

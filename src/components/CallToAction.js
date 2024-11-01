@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import "./../styles/CallToAction.css";
+import Button from "./Button";
 
 const CallToAction = ({
   title,
@@ -22,9 +23,12 @@ const CallToAction = ({
           <h2 className="restaurant-title">{title}</h2>
           <h3 className="restaurant-location">{location}</h3>
           <p className="description">{description}</p>
-          <button className="cta-button" onClick={handleNavigate}>
+          <Button
+            variant="primary"
+            onClick={handleNavigate}
+          >
             {buttonText}
-          </button>
+          </Button>
         </div>
 
         {imageUrl && (
