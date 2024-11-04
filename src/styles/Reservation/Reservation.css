@@ -52,13 +52,8 @@
   display: flex;
   flex-direction: column;
 }
-.reservation-field input {
-  width: 100%;
-  border-radius: 4pt;
-  border: none;
-  margin-bottom: 0.5rem;
-}
-.reservation-field label,
+
+
 .reservation-radio-label,
 .reservation-radio-group p {
   font-weight: bold;
@@ -68,10 +63,20 @@
   color: #fff;
 }
 
+
+
+.reservation-radio-label {
+  font-size: 14pt;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
 input[type="radio"] {
   margin-right: 0.5rem;
   accent-color: #f4ce14;
 }
+
+
 /*input[type="date"]{
    font-weight: bold;
    color:#f4ce14;
@@ -81,12 +86,6 @@ input[type="time"]{
   font-weight: bold;
 }
   */
-
-.reservation-radio-label {
-  font-size: 14pt;
-  margin-bottom: 0.5rem;
-  font-weight: normal;
-}
 .reservation-button {
   margin-top: 4rem;
 }

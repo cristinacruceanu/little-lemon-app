@@ -1,6 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./../styles/Reservation/Reservation.css";
-import "./../styles/Button.css"
 import Header from "./../components/Header";
 import Footer from "./../components/Footer";
 import ReservationTitle from "../components/Reservation/ReservationTitle";
@@ -11,6 +11,10 @@ import RestaurantImg from "./../assets/icons_assets/restaurant.jpg";
 import ChefBImg from "./../assets/icons_assets/restaurant-chef-b.jpg";
 
 const ReserveTable = () => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/login-page");
+  };
   return (
     <div className="reserve-page">
       <Header />
@@ -25,9 +29,9 @@ const ReserveTable = () => {
           <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
         </div>
         <Button
-         variant="primary"
-          onClick={() => console.log("Go to next page")}
-        >Next </Button>
+          variant="primary"
+          onClick={handleNavigate}
+        >Next</Button>
       </main>
 
       <Footer />
