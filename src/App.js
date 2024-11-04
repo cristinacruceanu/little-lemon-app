@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import ReserveTable from "./pages/ReserveTable";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   /*useEffect(() => {
@@ -12,8 +13,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/reserve-table" element={<ReserveTable />} />
+        <Route path="/login-page" element={<LoginPage />} />
       </Routes>
     </Router>
   );
