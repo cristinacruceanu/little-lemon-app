@@ -10,7 +10,7 @@
 
 .reservation-content {
   display: flex;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
   max-width: 1280px;
@@ -56,15 +56,16 @@
   width: 100%;
   border-radius: 4pt;
   border: none;
-   margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .reservation-field label,
-.reservation-radio-label, .reservation-radio-group p  {
+.reservation-radio-label,
+.reservation-radio-group p {
   font-weight: bold;
   display: block;
-  margin-top:0;
+  margin-top: 0;
   margin-bottom: 0.5rem;
-  color:#fff;
+  color: #fff;
 }
 
 input[type="radio"] {
@@ -82,17 +83,34 @@ input[type="time"]{
   */
 
 .reservation-radio-label {
-  font-size:14pt;
- margin-bottom: 0.5rem;
- font-weight: normal;
-
+  font-size: 14pt;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
 }
 .reservation-button {
   margin-top: 4rem;
 }
 
 @media screen and (max-width: 1024px) {
- .reservation-images-container {
-  flex-wrap:wrap;
- }
+  .reservation-content {
+    flex-direction: column;
+  }
+
+  .reservation-form {
+    order: 2;
+  }
+  .reservation-images-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    order: 1;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .reservation-images {
+    height: 250px;
+    width: 250px;
+  }
 }

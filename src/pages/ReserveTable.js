@@ -1,11 +1,12 @@
 import React from "react";
 import "./../styles/Reservation/Reservation.css";
+import "./../styles/Button.css"
 import Header from "./../components/Header";
 import Footer from "./../components/Footer";
 import ReservationTitle from "../components/Reservation/ReservationTitle";
 import ReservationImages from "../components/Reservation/ReservationImages";
 import ReservationForm from "../components/Reservation/ReservationForm";
-import ReservationButton from "../components/Reservation/ReservationButton";
+import Button from "./../components/Button";
 import RestaurantImg from "./../assets/icons_assets/restaurant.jpg";
 import ChefBImg from "./../assets/icons_assets/restaurant-chef-b.jpg";
 
@@ -23,10 +24,10 @@ const ReserveTable = () => {
           <ReservationForm />
           <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
         </div>
-        <ReservationButton
-          label="Next"
+        <Button
+         variant="primary"
           onClick={() => console.log("Go to next page")}
-        />
+        >Next </Button>
       </main>
 
       <Footer />
