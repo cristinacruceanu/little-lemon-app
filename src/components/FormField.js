@@ -8,12 +8,24 @@ const FormField = ({
   name,
   value,
   onChange,
-  required = false,
+  required = false,textarea=false, rows=4,
   ...rest
 }) => {
   return (
     <div className="form-field">
       <label htmlFor={name}>{label}</label>
+      {textarea ? (
+        <textarea
+          id={name}
+          name={name}
+          value={value}
+          onChange={onChange}
+          required={required}
+          rows={rows}
+          className="form-textarea"
+          {...rest}
+        />
+      ):(
       <input
         type={type}
         id={name}
@@ -23,7 +35,7 @@ const FormField = ({
         required={required}
         className="form-input"
         {...rest}
-      />
+      />)}
     </div>
   );
 };
@@ -34,7 +46,9 @@ FormField.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  reguired: PropTypes.bool,
+  required: PropTypes.bool,
+  textarea:PropTypes.bool,
+  rows:PropTypes.number,
 };
 
 export default FormField;

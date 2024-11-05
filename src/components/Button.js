@@ -9,7 +9,7 @@ const Button = ({
   variant = "primary",
   isLoading = false,
   disabled = false,
-  icon,
+  icon,ariaLabel, ...rest
 }) => {
   return (
     <button
@@ -17,6 +17,8 @@ const Button = ({
       className={`btn btn-${variant} ${isLoading ? "btn-loading" : ""}`}
       onClick={onClick}
       disabled={disabled || isLoading}
+      aria-label={ariaLabel}
+      {...rest}
     >
       {isLoading ? (
         <span className="loader" />
@@ -39,6 +41,7 @@ Button.propTypes = {
   /*isLoading: PropTypes.bool,*/
   disabled: PropTypes.bool,
   /* icon: PropTypes.node,*/
+  ariaLabel:PropTypes.string,
 };
 
 export default Button;
