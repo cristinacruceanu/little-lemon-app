@@ -1,13 +1,14 @@
-.form-input, .form-textarea {
+.form-input,
+.form-textarea {
   width: 100%;
   border-radius: 4pt;
   border: none;
   margin-bottom: 0.5rem;
 }
 .form-textarea {
-  resize:none;
+  resize: none;
 }
-.form-field label{
+.form-field label {
   font-weight: bold;
   display: block;
   margin-top: 0;
