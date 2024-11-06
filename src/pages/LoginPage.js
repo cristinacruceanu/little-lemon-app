@@ -32,7 +32,6 @@ const LoginPage = () => {
   const handleNavigate = () => {
     navigate("/");
   };
-
   return (
     <div className="login-page">
       <Header />
