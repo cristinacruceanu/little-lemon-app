@@ -11,12 +11,35 @@ const LoginPage = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: "",
     phoneNumber: "",
+    email: "",
     password: "",
-    request: "",
     additionalDetails: "",
   });
+  const navigate = useNavigate();
+
+  const validateForm = () => {
+    const errors = {};
+    if (!formData.firstName) {
+      errors.firstName = "First name field is required";
+    }
+    if (!formData.lastName) {
+      errors.lastName = "Last name field is required";
+    }
+    if (!formData.phoneNumber) {
+      errors.phoneNumber = "Phone number field is required";
+    }
+    if (!formData.email) {
+      errors.email = "Email field is required";
+    }
+    if (!formData.password) {
+      errors.password = "Password field is required";
+    }
+    if (!formData.additionalDetails) {
+      errors.additionalDetails = "Textarea error";
+    }
+    return errors;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,13 +48,15 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("User Data:", formData);
+    const errors = validateForm();
+    if (Object.keys(errors).length === 0) {
+      console.log("User Data:", formData);
+      navigate("/");
+    } else {
+      console.log("Validation errors:", errors);
+    }
   };
 
-  const navigate = useNavigate();
-  const handleNavigate = () => {
-    navigate("/");
-  };
   return (
     <div className="login-page">
       <Header />
@@ -47,62 +72,58 @@ const LoginPage = () => {
               label="First Name"
               name="firstName"
               type="text"
-              value={formData.firstName}
+              value={formData.firstName || ""}
               onChange={handleChange}
-              required
+              required={true}
             />
             <FormField
               label="Last Name"
               name="lastName"
               type="text"
-              value={formData.lastName}
+              value={formData.lastName || ""}
               onChange={handleChange}
-              required
+              required={true}
             />
             <FormField
               label="Phone Number"
               name="phoneNumber"
               type="tel"
-              pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"
-              value={formData.phoneNumber}
+              pattern="[0-9]{4} [0-9]{3} [0-9]{3}"
+              placeholder="E.g. 0123-456-789"
+              value={formData.phoneNumber || ""}
               onChange={handleChange}
-              required
+              required={true}
             />
             <FormField
               label="Email"
               name="email"
               type="email"
-              value={formData.email}
+              value={formData.email || ""}
               onChange={handleChange}
-              required
+              required={true}
             />
             <FormField
               label="Password"
               name="password"
               type="password"
-              value={formData.password}
+              value={formData.password || ""}
               onChange={handleChange}
               minLength="6"
-              required
+              required={true}
             />
             <FormField
               label="Additional Details"
               name="additionalDetails"
-              value={formData.additionalDetails}
+              value={formData.additionalDetails || ""}
               onChange={handleChange}
               textarea={true}
               rows={5}
             />
+            <Button ariaLabel="Submit Form" type="submit" variant="primary">
+              Continue
+            </Button>
           </form>
         </div>
-        <Button
-          ariaLabel="Submmit Form"
-          type="submit"
-          variant="primary"
-          onClick={handleNavigate}
-        >
-          Continue
-        </Button>
       </main>
 
       <Footer />
