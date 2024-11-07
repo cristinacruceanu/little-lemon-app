@@ -4,6 +4,8 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import ReserveTable from "./pages/ReserveTable";
 import LoginPage from "./pages/LoginPage";
+import BookTablePage from "./pages/BookTablePage";
+import ConfirmationPage from "./pages/ConfirmationPage";
 
 function App() {
   /*useEffect(() => {
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/reserve-table" element={<ReserveTable />} />
         <Route path="/login-page" element={<LoginPage />} />
+        <Route path="/book-table-page" element={<BookTablePage />} />
+        <Route path="/booking-confirmation" element={<ConfirmationPage />} />
       </Routes>
     </Router>
   );

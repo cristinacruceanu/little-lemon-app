@@ -51,7 +51,7 @@ const LoginPage = () => {
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
       console.log("User Data:", formData);
-      navigate("/");
+      navigate("/book-table-page");
     } else {
       console.log("Validation errors:", errors);
     }

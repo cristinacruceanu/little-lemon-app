@@ -15,6 +15,7 @@ import JaneSmith from "./../assets/icons_assets/jane-smith.jpg";
 import CarlosSantana from "./../assets/icons_assets/carlos-santana.jpg";
 
 const HomePage = () => {
+
   const handleOrder = () => {
     console.log("Order placed!");
   };
