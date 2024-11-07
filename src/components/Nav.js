@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./../styles/Nav.css";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "./../assets/icons_assets/Logo.svg";
 import menuIcon from "./../assets/icons_assets/mobile-menu-icon.svg";
 import closeIcon from "./../assets/icons_assets/close-menu-icon.svg";
 import Button from "./Button";
 
 const Nav = () => {
-  const navigate = useNavigate();
-  const handleNavigate = () => {
-    navigate("/");
-  };
   const [isMobile, setIsMobile] = useState(false);
   const handleResize = () => {
     if (window.innerWidth > 768) {
@@ -28,14 +24,9 @@ const Nav = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="logo">
-          <a href="#home">
-            <img
-              alt="logo"
-              src={Logo}
-              className="logo-img"
-              onClick={handleNavigate}
-            />
-          </a>
+          <Link to="/">
+            <img alt="logo" src={Logo} className="logo-img" />
+          </Link>
         </div>
 
         <ul
@@ -43,9 +34,7 @@ const Nav = () => {
           onClick={() => setIsMobile(false)}
         >
           <li>
-            <a href="#home" onClick={handleNavigate}>
-              Home
-            </a>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <a href="#about">About</a>
@@ -54,21 +43,25 @@ const Nav = () => {
             <a href="#menu">Menu</a>
           </li>
           <li>
-            <a href="#reservations">Reservations</a>
+            <Link to="/reserve-table">Reservations</Link>
           </li>
           <li>
             <a href="#orderonline">Order online</a>
           </li>
           {isMobile && (
             <li>
-              <Button variant="primary">Login</Button>
+              <Link to="/login-page">
+                <Button variant="primary">Login</Button>
+              </Link>
             </li>
           )}
         </ul>
 
         {!isMobile && (
           <div className="login-button">
-            <Button variant="secondary">Login</Button>
+            <Link to="/login-page">
+              <Button variant="secondary">Login</Button>
+            </Link>
           </div>
         )}
 
@@ -84,3 +77,5 @@ const Nav = () => {
 };
 
 export default Nav;
+
+/* a tags to be removed if all pages are done, replace with link to */
