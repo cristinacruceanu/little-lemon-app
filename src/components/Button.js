@@ -38,9 +38,9 @@ Button.propTypes = {
   onClick: PropTypes.func,
   type: PropTypes.oneOf(["button", "submit", "reset"]),
   variant: PropTypes.oneOf(["primary", "secondary", "danger"]),
-  /*isLoading: PropTypes.bool,*/
+  isLoading: PropTypes.bool,
   disabled: PropTypes.bool,
-  /* icon: PropTypes.node,*/
+   icon: PropTypes.node,
   ariaLabel:PropTypes.string,
 };
 

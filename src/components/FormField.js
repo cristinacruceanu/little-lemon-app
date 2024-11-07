@@ -15,8 +15,8 @@ const FormField = ({
   rows = 4,
   ...rest
 }) => {
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevVisibility) => !prevVisibility);
   };
@@ -29,8 +29,8 @@ const FormField = ({
           name={name}
           value={value}
           onChange={onChange}
-          required={required}
           rows={rows}
+          required={required}
           className="form-textarea"
           {...rest}
         />
@@ -78,11 +78,12 @@ FormField.propTypes = {
   label: PropTypes.string.isRequired,
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   required: PropTypes.bool,
   textarea: PropTypes.bool,
   rows: PropTypes.number,
+  placeholder: PropTypes.string,
 };
 
 export default FormField;
