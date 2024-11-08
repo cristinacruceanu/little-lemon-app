@@ -1,16 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./../../styles/Reservation/Reservation.css";
 
-const ReservationRadioGroup = ({ options, onChange }) => {
-const[selectedOption, setSelectedOption]=useState([]);
+const ReservationRadioGroup = ({ options, onChange, required = true, name }) => {
+  const [selectedOption, setSelectedOption] = useState([]);
 
-const handleRadioChange=(option)=> {
-
-  setSelectedOption(option);
-  if(onChange){
-    onChange(option);
-  }
-};
+  const handleRadioChange = (option) => {
+    setSelectedOption(option);
+    if (onChange) {
+      onChange(option);
+    }
+  };
   return (
     <div className="reservation-radio-group">
       <p>Seating options:</p>
@@ -18,10 +17,11 @@ const handleRadioChange=(option)=> {
         <label key={option} className="reservation-radio-label">
           <input
             type="radio"
-            name="radio-group"
+            name={name}
             value={option}
             checked={selectedOption === option}
             onChange={() => handleRadioChange(option)}
+            required={required}
           />
           {option}
         </label>
