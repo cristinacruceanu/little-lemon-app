@@ -1,22 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./../../styles/Reservation/Reservation.css";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ReservationContext } from "../../context/ReservationContext";
 import FormField from "./../FormField";
 import ReservationRadioGroup from "./ReservationRadioGroup";
 import Button from "../Button";
 
 const ReservationForm = () => {
+  const { setReservationData } = useContext(ReservationContext);
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-    
   const [formData, setFormData] = useState({
     date: "",
     time: "",
     diners: "",
     occasion: "",
+    seating: "",
   });
 
-  const [reservationDetails, setReservationDetails] = useState(null);
+  /*const [reservationDetails, setReservationDetails] = useState(null);
+  setReservationDetails(formData);used inside the handle Submit
+      navigate("/login-page", { state: reservationDetails }); - used inside the handle Submit
+  */
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -24,7 +30,8 @@ const ReservationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setReservationDetails(formData);
+    setReservationData(formData);
+    navigate("/login-page");
     console.log("Form submitted:", formData);
   };
   return (
@@ -34,17 +41,17 @@ const ReservationForm = () => {
           label="Date"
           type="date"
           name="date"
-          value={formData.date}
+          value={formData.date || ""}
           onChange={handleChange}
-          required
+          required={true}
         />{" "}
         <FormField
           label="Time"
           type="time"
           name="time"
-          value={formData.time}
+          value={formData.time || ""}
           onChange={handleChange}
-          required
+          required={true}
         />
       </div>
       <div className="form-column">
@@ -53,22 +60,30 @@ const ReservationForm = () => {
           type="number"
           name="diners"
           min="1"
-          value={formData.diners}
+          value={formData.diners || ""}
           onChange={handleChange}
-          required
+          required={true}
         />{" "}
         <FormField
           label="Occasion"
           type="text"
           name="occasion"
-          value={formData.occasion}
+          value={formData.occasion || ""}
           onChange={handleChange}
+          required={true}
         />
-        <ReservationRadioGroup options={["Standard", "Outside"]} />
+        <ReservationRadioGroup
+          options={["Standard", "Outside"]}
+          onChange={handleChange}
+          value={formData.seating || ""}
+          name="seating"
+        />
       </div>
-      <Button variant="primary" onClick={handleSubmit}>
-        Next
-      </Button>
+      <div className="button-container">
+        <Button variant="primary" type="submit">
+          Next
+        </Button>
+      </div>
     </form>
   );
 };

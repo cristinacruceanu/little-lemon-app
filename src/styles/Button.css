@@ -6,6 +6,7 @@
   transition: background-color 0.3s ease;
   font-weight: bold;
   margin-top: 1rem;
+  margin: 0 auto;
 }
 
 .btn-primary {
@@ -13,6 +14,9 @@
   color: #000;
 }
 
+.button-container .btn-primary {
+  margin-top: 1rem;
+}
 .btn-primary:hover {
   background-color: #d3b314;
 }
@@ -26,7 +30,7 @@
 .btn-secondary:hover {
   background-color: #24302c;
 }
-/*
+
 .btn:disabled {
   background-color: #d9d9d9;
   color: #000;
@@ -48,7 +52,7 @@
 .btn-icon {
   margin-right: 8px;
 }
-*/
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -57,10 +61,25 @@
     transform: rotate(360deg);
   }
 }
+@media screen and (max-width: 1200px) {
+  .button-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .button-container .btn-primary {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 480px) {
   .btn {
     padding: 0.25rem 1rem;
     font-size: 16pt;
+  }
+
+  .button-container {
+    display: flex;
+    width: 100%;
   }
 }
