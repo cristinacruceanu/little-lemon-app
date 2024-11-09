@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+/*import React from "react";
+import PropTypes from "prop-types";
 import "./../../styles/Reservation/Reservation.css";
 
-const ReservationRadioGroup = ({ options, onChange, required = true, name }) => {
-  const [selectedOption, setSelectedOption] = useState([]);
+const ReservationRadioGroup = ({ options, name, value, onChange, required = true }) => {
+  /*const [selectedOption, setSelectedOption] = useState([]);
 
   const handleRadioChange = (option) => {
     setSelectedOption(option);
@@ -13,21 +14,35 @@ const ReservationRadioGroup = ({ options, onChange, required = true, name }) => 
   return (
     <div className="reservation-radio-group">
       <p>Seating options:</p>
-      {options.map((option) => (
-        <label key={option} className="reservation-radio-label">
+      {options.map((option, index) => (
+        <label key={index} className="reservation-radio-label">
           <input
             type="radio"
             name={name}
-            value={option}
-            checked={selectedOption === option}
-            onChange={() => handleRadioChange(option)}
+            value={option.value}
+            checked={value === option.value}
+            onChange={onChange}
             required={required}
           />
-          {option}
+          {option.label}
         </label>
       ))}
     </div>
   );
 };
 
+ReservationRadioGroup.propTypes = {
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value:PropTypes.string.isRequired,
+      label:PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  name:PropTypes.string.isRequired,
+  selectedOption:PropTypes.string,
+  onChange:PropTypes.func.isRequired,
+};
+
 export default ReservationRadioGroup;
+
+*/
