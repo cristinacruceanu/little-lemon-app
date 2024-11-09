@@ -3,7 +3,6 @@ import "./../../styles/Reservation/Reservation.css";
 import { useNavigate } from "react-router-dom";
 import { ReservationContext } from "../../context/ReservationContext";
 import FormField from "./../FormField";
-import ReservationRadioGroup from "./ReservationRadioGroup";
 import Button from "../Button";
 
 const ReservationForm = () => {
@@ -17,6 +16,11 @@ const ReservationForm = () => {
     occasion: "",
     seating: "",
   });
+
+
+  /*const handleRadioChange = (value) => {
+    setFormData((prevData) => ({ ...prevData, seating: value }));
+  };
 
   /*const [reservationDetails, setReservationDetails] = useState(null);
   setReservationDetails(formData);used inside the handle Submit
@@ -72,11 +76,17 @@ const ReservationForm = () => {
           onChange={handleChange}
           required={true}
         />
-        <ReservationRadioGroup
-          options={["Standard", "Outside"]}
-          onChange={handleChange}
-          value={formData.seating || ""}
+        <FormField
+          label="Seating Options:"
           name="seating"
+          type="radio"
+          options={[
+            { value: "Standard", label: "Standard" },
+            { value: "Outside", label: "Outside" },
+          ]}
+          value={formData.seating || ""}
+          /*onChange={(e) => handleRadioChange(e.target.value)}*/
+          onChange={handleChange}
         />
       </div>
       <div className="button-container">

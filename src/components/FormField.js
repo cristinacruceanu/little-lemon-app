@@ -9,13 +9,14 @@ const FormField = ({
   type,
   name,
   value,
+  options,
+  selectedValue,
   onChange,
   required = false,
   textarea = false,
   rows = 4,
   ...rest
 }) => {
-
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevVisibility) => !prevVisibility);
@@ -34,6 +35,22 @@ const FormField = ({
           className="form-textarea"
           {...rest}
         />
+      ) : type === "radio" ? (
+        <div className="reservation-radio-group">
+          {options.map((option, index) => (
+            <label key={index} className="reservation-radio-label">
+              <input
+                type="radio"
+                name={name}
+                value={option.value}
+                checked={value === option.value}
+                onChange={onChange}
+                required={required}
+              />
+              {option.label}
+            </label>
+          ))}
+        </div>
       ) : (
         <div style={{ position: "relative" }}>
           <input
