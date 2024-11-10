@@ -17,14 +17,13 @@ const ReservationForm = () => {
     seating: "",
   });
 
-
   /*const handleRadioChange = (value) => {
     setFormData((prevData) => ({ ...prevData, seating: value }));
-  };
-
+  }; - handle change for the radio buttons if this was the only field, otherwise use the dynamic [name]
+  
   /*const [reservationDetails, setReservationDetails] = useState(null);
-  setReservationDetails(formData);used inside the handle Submit
-      navigate("/login-page", { state: reservationDetails }); - used inside the handle Submit
+  setReservationDetails(formData);used inside the handle Submit directly if details are needed in the next page to avoid useContext
+      navigate("/login-page", { state: reservationDetails }); - used inside the handle Submit directly if details are needed in the next page to avoid useContext
   */
 
   const handleChange = (e) => {
@@ -48,6 +47,7 @@ const ReservationForm = () => {
           value={formData.date || ""}
           onChange={handleChange}
           required={true}
+          min={new Date().toISOString().split("T")[0]}
         />{" "}
         <FormField
           label="Time"
