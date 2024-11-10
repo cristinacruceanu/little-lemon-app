@@ -15,6 +15,7 @@ const FormField = ({
   required = false,
   textarea = false,
   rows = 4,
+  showToggleVisibility = true,
   ...rest
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -63,28 +64,29 @@ const FormField = ({
             className="form-input"
             {...rest}
           />
-          {type === "password" && (
-            <span
-              onClick={togglePasswordVisibility}
-              style={{
-                position: "absolute",
-                right: "10px",
-                top: "35%",
-                transform: "translateY(-50%)",
-                cursor: "pointer",
-                color: "#000",
-                width: "30px",
-                height: "30px",
-              }}
-              className="password-icon"
-            >
-              {isPasswordVisible ? (
-                <img src={EyeIconOff} alt="Hide password" />
-              ) : (
-                <img src={EyeIcon} alt="Show Password" />
-              )}
-            </span>
-          )}
+          {type === "password" &&
+            showToggleVisibility &&(
+              <span
+                onClick={togglePasswordVisibility}
+                style={{
+                  position: "absolute",
+                  right: "10px",
+                  top: "35%",
+                  transform: "translateY(-50%)",
+                  cursor: "pointer",
+                  color: "#000",
+                  width: "30px",
+                  height: "30px",
+                }}
+                className="password-icon"
+              >
+                {isPasswordVisible ? (
+                  <img src={EyeIconOff} alt="Hide password" />
+                ) : (
+                  <img src={EyeIcon} alt="Show Password" />
+                )}
+              </span>
+            )}
         </div>
       )}
     </div>

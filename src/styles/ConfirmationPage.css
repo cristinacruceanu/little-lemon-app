@@ -1,0 +1,29 @@
+.confirmation-details {
+  font-size: 16pt;
+  margin: 0.5rem 0;
+  color: #fff;
+  font-weight: normal;
+max-width: 1280px;
+}
+
+.confirmation-title {
+  color: #f4ce14;
+  opacity: 80%;
+  margin-top: 0;
+}
+.reservation-data {
+  border: 1px solid #fff;
+  width: 27ch;
+
+}
+.reservation-data p {
+  margin-left: 1rem;
+
+}
+.confirmation-note a {
+  color: #f4ce14;
+}
+
+.confirmation-note a:hover {
+  color: #d3b314;
+}

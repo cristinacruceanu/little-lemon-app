@@ -53,8 +53,7 @@
   flex-direction: column;
 }
 
-.reservation-radio-label,
-.reservation-radio-group p {
+.reservation-radio-label {
   font-weight: bold;
   display: block;
   margin-top: 0;
