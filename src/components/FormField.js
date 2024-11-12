@@ -22,6 +22,9 @@ const FormField = ({
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevVisibility) => !prevVisibility);
   };
+
+
+
   return (
     <div className="form-field">
       <label htmlFor={name}>{label}</label>
@@ -52,6 +55,26 @@ const FormField = ({
             </label>
           ))}
         </div>
+      ) : type === "time" ? (
+        <>
+          <select
+            id="time-select"
+            name={name}
+            value={value}
+            onChange={onChange}
+            aria-label="Booking time"
+            required
+          >
+            <option value="" disabled>
+              Choose a time
+            </option>
+            {options.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </>
       ) : (
         <div style={{ position: "relative" }}>
           <input
@@ -64,29 +87,28 @@ const FormField = ({
             className="form-input"
             {...rest}
           />
-          {type === "password" &&
-            showToggleVisibility &&(
-              <span
-                onClick={togglePasswordVisibility}
-                style={{
-                  position: "absolute",
-                  right: "10px",
-                  top: "35%",
-                  transform: "translateY(-50%)",
-                  cursor: "pointer",
-                  color: "#000",
-                  width: "30px",
-                  height: "30px",
-                }}
-                className="password-icon"
-              >
-                {isPasswordVisible ? (
-                  <img src={EyeIconOff} alt="Hide password" />
-                ) : (
-                  <img src={EyeIcon} alt="Show Password" />
-                )}
-              </span>
-            )}
+          {type === "password" && showToggleVisibility && (
+            <span
+              onClick={togglePasswordVisibility}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "35%",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+                color: "#000",
+                width: "30px",
+                height: "30px",
+              }}
+              className="password-icon"
+            >
+              {isPasswordVisible ? (
+                <img src={EyeIconOff} alt="Hide password" />
+              ) : (
+                <img src={EyeIcon} alt="Show Password" />
+              )}
+            </span>
+          )}
         </div>
       )}
     </div>

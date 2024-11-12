@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useReducer} from "react";
 
 import "./../styles/Reservation/Reservation.css";
 import Header from "../components/Header";
@@ -8,8 +8,20 @@ import ReservationImages from "../components/Reservation/ReservationImages";
 import ReservationForm from "../components/Reservation/ReservationForm";
 import RestaurantImg from "./../assets/icons_assets/restaurant.jpg";
 import ChefBImg from "./../assets/icons_assets/restaurant-chef-b.jpg";
+import {initializeTimes, updateTimes} from "../utils/Utils";
 
 const ReserveTable = () => {
+
+  const [availableTimes, dispatch] = useReducer(
+    updateTimes,
+    [],
+    initializeTimes,
+  );
+
+  const handleDateChange = (selectedDate) => {
+    dispatch({ type: "UPDATE_TIMES", date: selectedDate });
+  };
+
   return (
     <div className="reserve-page">
       <Header />
@@ -20,7 +32,7 @@ const ReserveTable = () => {
           description="Find a table for any occasion"
         />
         <div className="reservation-content">
-          <ReservationForm />
+          <ReservationForm  availableTimes={availableTimes} onDateChange={handleDateChange}/>
           <ReservationImages image1={RestaurantImg} image2={ChefBImg} />
         </div>
       </main>
