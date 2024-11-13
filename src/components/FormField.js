@@ -44,6 +44,7 @@ const FormField = ({
               <input
                 type="radio"
                 name={name}
+                id={name}
                 value={option.value}
                 checked={value === option.value}
                 onChange={onChange}
@@ -85,6 +86,7 @@ const FormField = ({
             className="form-input"
             {...rest}
           />
+
           {type === "password" && showToggleVisibility && (
             <span
               onClick={togglePasswordVisibility}
