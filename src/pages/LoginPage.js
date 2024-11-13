@@ -88,8 +88,8 @@ const LoginPage = () => {
               label="Phone Number"
               name="phoneNumber"
               type="tel"
-              pattern="[0-9]{4} [0-9]{3} [0-9]{3}"
-              placeholder="E.g. 0123-456-789"
+              pattern="[0-9]{4}[0-9]{3}[0-9]{3}"
+              placeholder="E.g. 0123456789"
               value={formData.phoneNumber || ""}
               onChange={handleChange}
               required={true}

@@ -6,16 +6,16 @@ import { ReservationContext } from "../../context/ReservationContext";
 const ReservationDropdown = ({
   placeholder = "Date - Time - Number of diners",
 }) => {
-  const { reservationData } = useContext(ReservationContext);
+  const { formData } = useContext(ReservationContext);
 
   return (
     <div className="reservation-dropdown">
       <select className="dropdown-select">
-        <option value="" disabled selected hidden>
+        <option value="" disabled hidden selected>
           {placeholder}
         </option>
-        {reservationData ? (
-          Object.entries(reservationData).map(([key, value]) => (
+        {formData ? (
+          Object.entries(formData).map(([key, value]) => (
             <option key={key} value={key} disabled>
               {`${key.charAt(0).toUpperCase() + key.slice(1)}:${" "}${value}`}
             </option>

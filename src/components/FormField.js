@@ -10,7 +10,7 @@ const FormField = ({
   name,
   value,
   options,
-  selectedValue,
+  min,
   onChange,
   required = false,
   textarea = false,
@@ -22,8 +22,6 @@ const FormField = ({
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevVisibility) => !prevVisibility);
   };
-
-
 
   return (
     <div className="form-field">
@@ -125,6 +123,7 @@ FormField.propTypes = {
   textarea: PropTypes.bool,
   rows: PropTypes.number,
   placeholder: PropTypes.string,
+  min: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default FormField;

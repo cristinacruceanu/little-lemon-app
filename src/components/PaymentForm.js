@@ -5,7 +5,7 @@ import "../styles/BookTable.css";
 import FormField from "../components/FormField";
 import Button from "../components/Button";
 
-const PaymentForm = ({ reservationData }) => {
+const PaymentForm = () => {
   const [paymentData, setPaymentData] = useState({
     cardNumber: "",
     firstName: "",

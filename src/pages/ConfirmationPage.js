@@ -9,7 +9,7 @@ import ReservationTitle from "../components/Reservation/ReservationTitle";
 import Button from "../components/Button";
 
 const BookingConfirmation = () => {
-  const { reservationData } = useContext(ReservationContext);
+  const { formData } = useContext(ReservationContext);
   const navigate = useNavigate();
   const handleNavigate = () => {
     navigate("/");
@@ -27,38 +27,38 @@ const BookingConfirmation = () => {
           <h2 className="confirmation-title">Booking confirmed!</h2>
           <p> Thank you for your reservation! </p>
           <div className="confirmation-details reservation-data ">
-            {reservationData?.date && (
+            {formData?.date && (
               <p>
                 <strong>Date: </strong>
-                {reservationData.date}
+                {formData.date}
               </p>
             )}
 
-            {reservationData?.time && (
+            {formData?.time && (
               <p>
                 <strong>Time: </strong>
-                {reservationData.time}
+                {formData.time}
               </p>
             )}
 
-            {reservationData?.diners && (
+            {formData?.diners && (
               <p>
                 <strong> Diners: </strong>
-                {reservationData.diners}
+                {formData.diners}
               </p>
             )}
 
-            {reservationData?.occasion && (
+            {formData?.occasion && (
               <p>
                 <strong>Occasion: </strong>
-                {reservationData.occasion}
+                {formData.occasion}
               </p>
             )}
 
-            {reservationData?.seating && (
+            {formData?.seating && (
               <p>
                 <strong>Seating: </strong>
-                {reservationData.seating}
+                {formData.seating}
               </p>
             )}
           </div>
