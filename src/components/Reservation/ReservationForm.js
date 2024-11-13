@@ -8,7 +8,6 @@ import Button from "../Button";
 const ReservationForm = () => {
   const { availableTimes, formData, updateTimes, setDate, setFormData } =
     useContext(ReservationContext);
-  const navigate = useNavigate();
 
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
@@ -20,7 +19,7 @@ const ReservationForm = () => {
     const { name, value } = e.target;
     setFormData({ [name]: value });
   };
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/login-page");
