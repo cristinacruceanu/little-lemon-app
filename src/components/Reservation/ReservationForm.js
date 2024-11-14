@@ -2,29 +2,44 @@ import React, { useContext } from "react";
 import "./../../styles/Reservation/Reservation.css";
 import { useNavigate } from "react-router-dom";
 import { ReservationContext } from "../../context/ReservationContext";
+import { getTodayDate } from "../../utils/Utils";
 import FormField from "./../FormField";
 import Button from "../Button";
 
 const ReservationForm = () => {
-  const { availableTimes, formData, updateTimes, setDate, setFormData } =
-    useContext(ReservationContext);
+  const {
+    availableTimes,
+    formData,
+    setDate,
+    setFormData,
+    loading,
+    submitReservation,
+  } = useContext(ReservationContext);
 
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
     setDate(selectedDate);
-    updateTimes(selectedDate);
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ [name]: value });
   };
+
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/login-page");
-    console.log("Form submitted:", formData, availableTimes);
+    const isSuccessful = await submitReservation(formData);
+
+    if (isSuccessful) {
+      console.log("Booking successful:", formData);
+      navigate("/login-page");
+    } else {
+      console.error("Booking failed. Please try again.");
+    }
   };
+
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
       <div className="form-row">
@@ -35,17 +50,21 @@ const ReservationForm = () => {
           value={formData.date || ""}
           onChange={handleDateChange}
           required={true}
-          min={new Date().toISOString().split("T")[0]}
+          min={getTodayDate()}
         />{" "}
-        <FormField
-          label="Time"
-          type="time"
-          name="time"
-          options={availableTimes}
-          value={formData.time || ""}
-          onChange={handleChange}
-          required={true}
-        />{" "}
+        {loading ? (
+          <p> Loading available times...</p>
+        ) : (
+          <FormField
+            label="Time"
+            type="time"
+            name="time"
+            options={availableTimes}
+            value={formData.time || ""}
+            onChange={handleChange}
+            required={true}
+          />
+        )}{" "}
       </div>
       <div className="form-column">
         <FormField
