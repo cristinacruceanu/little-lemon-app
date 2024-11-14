@@ -10,11 +10,11 @@ const FormField = ({
   name,
   value,
   options,
-  min,
   onChange,
   required = false,
   textarea = false,
   rows = 4,
+
   showToggleVisibility = true,
   ...rest
 }) => {
@@ -125,7 +125,6 @@ FormField.propTypes = {
   textarea: PropTypes.bool,
   rows: PropTypes.number,
   placeholder: PropTypes.string,
-  min: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default FormField;
