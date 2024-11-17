@@ -33,18 +33,22 @@ const FormField = ({
           value={value}
           onChange={onChange}
           rows={rows}
-          required={required}
           className="form-textarea"
+          required={required}
           {...rest}
         />
       ) : type === "radio" ? (
         <div className="reservation-radio-group">
           {options.map((option, index) => (
-            <label key={index} className="reservation-radio-label">
+            <label
+              key={index}
+              htmlFor={`${name}-${option.value}`}
+              className="reservation-radio-label"
+            >
               <input
                 type="radio"
                 name={name}
-                id={name}
+                id={`${name}-${option.value}`}
                 value={option.value}
                 checked={value === option.value}
                 onChange={onChange}

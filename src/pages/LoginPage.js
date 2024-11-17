@@ -35,15 +35,17 @@ const LoginPage = () => {
     if (!formData.password) {
       errors.password = "Password field is required";
     }
-    if (!formData.additionalDetails) {
-      errors.additionalDetails = "Textarea error";
-    }
     return errors;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const isFormValid = () => {
+    const { firstName, lastName, phoneNumber, email, password } = formData;
+    return firstName && lastName && phoneNumber && email && password;
   };
 
   const handleSubmit = (e) => {
@@ -118,8 +120,14 @@ const LoginPage = () => {
               onChange={handleChange}
               textarea={true}
               rows={5}
+        
             />
-            <Button ariaLabel="Submit Form" type="submit" variant="primary">
+            <Button
+              ariaLabel="Submit Form"
+              type="submit"
+              variant="primary"
+              disabled={!isFormValid()}
+            >
               Continue
             </Button>
           </form>

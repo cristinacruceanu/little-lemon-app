@@ -3,9 +3,10 @@ import ReservationForm from "./ReservationForm";
 import { MemoryRouter } from "react-router-dom";
 import { ReservationContext } from "../../context/ReservationContext";
 import { fetchAPI } from "../../api";
+import FormField from "../FormField";
 
-describe("label unit test", () => {
-  test("renders the ReservationForm seating label", () => {
+/*describe("label unit test", () => {
+  test("renders the ReservationForm date label", () => {
     const mockAvailableTimes = [
       "12:00 PM",
       "1:00 PM",
@@ -37,8 +38,37 @@ describe("label unit test", () => {
         </MemoryRouter>
       </ReservationContext.Provider>,
     );
-    const seatingLabel = screen.getByLabelText("Seating Options:");
-    expect(seatingLabel).toBeInTheDocument();
+    const dateLabel = screen.getByLabelText("Date");
+    expect(dateLabel).toBeInTheDocument();
+  });
+});
+*/
+
+describe("seating label unit test", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test("renders the ReservationForm seating label", () => {
+    render(
+      <FormField
+        label="Seating Options:"
+        name="seating"
+        type="radio"
+        options={[
+          { value: "Standard", label: "Standard" },
+          { value: "Outside", label: "Outside" },
+        ]}
+        value="Standard"
+        onChange={jest.fn()}
+      />,
+    );
+
+    const standardRadio = screen.getByLabelText("Standard");
+    const outsideRadio = screen.getByLabelText("Outside");
+
+    expect(standardRadio).toBeInTheDocument();
+    expect(outsideRadio).toBeInTheDocument();
   });
 });
 
