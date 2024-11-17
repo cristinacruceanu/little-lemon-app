@@ -26,6 +26,11 @@ const ReservationForm = () => {
     setFormData({ [name]: value });
   };
 
+  const isFormValid = () => {
+    const { date, time, diners, occasion, seating } = formData;
+    return date && time && diners && occasion && seating;
+  };
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -33,10 +38,10 @@ const ReservationForm = () => {
     const isSuccessful = await submitReservation(formData);
 
     if (isSuccessful) {
-      console.log("Booking successful:", formData);
+      console.log("Booking data successfully saved:", formData);
       navigate("/login-page");
     } else {
-      console.error("Booking failed. Please try again.");
+      console.error("Booking details saving failed. Please try again.");
     }
   };
 
@@ -99,7 +104,7 @@ const ReservationForm = () => {
         />
       </div>
       <div className="button-container">
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" disabled={!isFormValid()}>
           Next
         </Button>
       </div>

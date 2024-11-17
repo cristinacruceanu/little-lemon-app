@@ -71,7 +71,7 @@ const PaymentForm = () => {
         required
       />
       <FormField
-        label=""
+        label="Text/email notification"
         type="radio"
         name="notification"
         value={paymentData.notification || ""}
