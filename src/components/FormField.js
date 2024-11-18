@@ -60,6 +60,7 @@ const FormField = ({
         </div>
       ) : type === "time" ? (
         <>
+          <label htmlFor="time-select">Time</label>
           <select
             id="time-select"
             name={name}

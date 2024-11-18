@@ -1,6 +1,21 @@
 import { initializeTimes } from "./Utils";
 import { fetchAPI } from "../api";
 
+beforeEach(() => {
+  jest.clearAllMocks();
+  jest.useRealTimers();
+});
+
+afterEach(() => {
+  jest.clearAllTimers();
+  jest.resetAllMocks();
+});
+
+afterAll(() => {
+  jest.resetAllMocks();
+});
+
+
 jest.mock("../api", () => ({
   fetchAPI: jest.fn(),
 }));
