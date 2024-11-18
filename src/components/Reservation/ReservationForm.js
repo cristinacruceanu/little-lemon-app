@@ -6,6 +6,8 @@ import { getTodayDate } from "../../utils/Utils";
 import FormField from "./../FormField";
 import Button from "../Button";
 
+
+
 const ReservationForm = () => {
   const {
     availableTimes,
@@ -26,10 +28,11 @@ const ReservationForm = () => {
     setFormData({ [name]: value });
   };
 
-  const isFormValid = () => {
-    const { date, time, diners, occasion, seating } = formData;
-    return date && time && diners && occasion && seating;
-  };
+ const isFormValid = () => {
+   const { date, time, diners, occasion, seating } = formData;
+   return date && time && diners && occasion && seating;
+ };
+
 
   const navigate = useNavigate();
 
@@ -37,7 +40,7 @@ const ReservationForm = () => {
     e.preventDefault();
     const isSuccessful = await submitReservation(formData);
 
-    if (isSuccessful) {
+    if (isSuccessful ) {
       console.log("Booking data successfully saved:", formData);
       navigate("/login-page");
     } else {
@@ -103,7 +106,12 @@ const ReservationForm = () => {
         />
       </div>
       <div className="button-container">
-        <Button variant="primary" type="submit" disabled={!isFormValid()}>
+        <Button
+          variant="primary"
+          type="submit"
+          disabled={!isFormValid()}
+       data-testid="next-button"
+        >
           Next
         </Button>
       </div>
