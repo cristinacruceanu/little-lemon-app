@@ -61,7 +61,6 @@ const ReservationForm = () => {
           <p> Loading available times...</p>
         ) : (
           <FormField
-            label="Time"
             type="time"
             name="time"
             options={availableTimes}
