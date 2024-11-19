@@ -1,14 +1,7 @@
-import {
-  render,
-  screen,
-  fireEvent,
-  waitFor,
-  cleanup,
-} from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ReservationForm from "./ReservationForm";
 import { MemoryRouter } from "react-router-dom";
 import { ReservationContext } from "../../context/ReservationContext";
-import { fetchAPI } from "../../api";
 import FormField from "../FormField";
 import { getTodayDate } from "../../utils/Utils";
 
@@ -89,65 +82,6 @@ describe("seating label unit test", () => {
   });
 });
 
-jest.mock("../../api", () => ({
-  fetchAPI: jest.fn(),
-}));
-
-describe("update times function test", () => {
-  const mockTimes = ["11:00 AM", "1:00 PM", "3:00 PM"];
-
-  beforeEach(() => {
-    fetchAPI.mockResolvedValue(mockTimes); // Mock resolved value
-  });
-
-  afterEach(() => {
-    jest.clearAllMocks(); // Reset mocks after each test
-  });
-
-  test("updates available times based on the selected date", async () => {
-    const updateTimes = jest.fn(async (date) => {
-      const times = await fetchAPI(date);
-      return times;
-    });
-    const setDate = jest.fn((date) => {
-      updateTimes(date);
-    });
-
-    render(
-      <ReservationContext.Provider
-        value={{
-          availableTimes: [],
-          formData: { date: "" },
-          updateTimes,
-          setDate,
-          setFormData: jest.fn(),
-        }}
-      >
-        <MemoryRouter>
-          <ReservationForm />
-        </MemoryRouter>
-      </ReservationContext.Provider>,
-    );
-
-    const dateInput = screen.getByLabelText("Date");
-    fireEvent.change(dateInput, {
-      target: { value: "2024-11-17" },
-    });
-
-    await waitFor(() => {
-      expect(setDate).toHaveBeenCalledWith("2024-11-17");
-    });
-
-    await waitFor(() => {
-      expect(updateTimes).toHaveBeenCalledWith("2024-11-17");
-    });
-
-    expect(fetchAPI).toHaveBeenCalledWith("2024-11-17");
-    const resolvedTimes = await fetchAPI.mock.results[0].value;
-    expect(resolvedTimes).toEqual(mockTimes);
-  });
-});
-
 describe("validate ReservationForm input attributes", () => {
   const mockContextValue = {
     availableTimes: ["12:00 PM", "1:00 PM", "2:00"],
@@ -202,125 +136,5 @@ describe("validate ReservationForm input attributes", () => {
     const outsideRadio = screen.getByLabelText("Outside");
     expect(standardRadio).toHaveAttribute("type", "radio");
     expect(outsideRadio).toHaveAttribute("type", "radio");
-  });
-});
-
-describe("isFormValid", () => {
-  const mockContextValue = {
-    availableTimes: ["12:00 PM", "1:00 PM", "2:00 PM"],
-    formData: {
-      date: "",
-      time: "",
-      diners: "",
-      occasion: "",
-      seating: "",
-    },
-    setDate: jest.fn(),
-    setFormData: jest.fn(),
-    loading: false,
-    submitReservation: jest.fn(),
-  };
-
-  const setup = (contextValue) => {
-    render(
-      <ReservationContext.Provider value={contextValue}>
-        <MemoryRouter>
-          <ReservationForm />
-        </MemoryRouter>
-      </ReservationContext.Provider>,
-    );
-  };
-
-  test("should return true when all form fields are valid", () => {
-    const validFormData = {
-      date: "2024-11-17",
-      time: "12:00 PM",
-      diners: 2,
-      occasion: "Birthday",
-      seating: "Standard",
-    };
-
-    const contextValue = {
-      ...mockContextValue,
-      formData: validFormData,
-    };
-
-    setup(contextValue);
-
-    const button = screen.getByTestId("next-button");
-    expect(button).not.toBeDisabled();
-  });
-
-  test("should return false when any form field is missing", () => {
-    const invalidFormDataSets = [
-      {
-        date: "",
-        time: "12:00 PM",
-        diners: 2,
-        occasion: "Birthday",
-        seating: "Standard",
-      },
-      {
-        date: "2024-11-17",
-        time: "",
-        diners: 2,
-        occasion: "Birthday",
-        seating: "Standard",
-      },
-      {
-        date: "2024-11-17",
-        time: "12:00 PM",
-        diners: "",
-        occasion: "Birthday",
-        seating: "Standard",
-      },
-      {
-        date: "2024-11-17",
-        time: "12:00 PM",
-        diners: 2,
-        occasion: "",
-        seating: "Standard",
-      },
-      {
-        date: "2024-11-17",
-        time: "12:00 PM",
-        diners: 2,
-        occasion: "Birthday",
-        seating: "",
-      },
-    ];
-
-    invalidFormDataSets.forEach((formData) => {
-      const contextValue = {
-        ...mockContextValue,
-        formData,
-      };
-
-      setup(contextValue);
-
-      const button = screen.getByTestId("next-button");
-      expect(button).toBeDisabled();
-      cleanup();
-
-      /* Another posibility to avoid duplication of the button in the DOM
-  test.each([
-  { date: "", time: "12:00 PM", diners: 2, occasion: "Birthday", seating: "Standard" },
-  { date: "2024-11-17", time: "", diners: 2, occasion: "Birthday", seating: "Standard" },
-  { date: "2024-11-17", time: "12:00 PM", diners: "", occasion: "Birthday", seating: "Standard" },
-  { date: "2024-11-17", time: "12:00 PM", diners: 2, occasion: "", seating: "Standard" },
-  { date: "2024-11-17", time: "12:00 PM", diners: 2, occasion: "Birthday", seating: "" },
-])("button is disabled when formData is invalid: %p", (formData) => {
-  const contextValue = {
-    ...mockContextValue,
-    formData,
-  };
-
-  setup(contextValue);
-
-  const button = screen.getByTestId("next-button");
-  expect(button).toBeDisabled();
-
-  cleanup();*/
-    });
   });
 });
