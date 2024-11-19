@@ -44,7 +44,7 @@ const ReservationForm = () => {
       console.log("Booking data successfully saved:", formData);
       navigate("/login-page");
     } else {
-      console.error("Booking details saving failed. Please try again.");
+      console.error("Booking data saving failed. Please try again.");
     }
   };
 
