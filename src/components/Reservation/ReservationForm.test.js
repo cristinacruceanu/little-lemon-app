@@ -97,12 +97,11 @@ describe("update times function test", () => {
   const mockTimes = ["11:00 AM", "1:00 PM", "3:00 PM"];
 
   beforeEach(() => {
-    fetchAPI.mockResolvedValue(mockTimes);
+    fetchAPI.mockResolvedValue(mockTimes); // Mock resolved value
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
-    jest.clearAllTimers();
+    jest.clearAllMocks(); // Reset mocks after each test
   });
 
   test("updates available times based on the selected date", async () => {

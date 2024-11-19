@@ -20,7 +20,7 @@ jest.mock("../api", () => ({
   fetchAPI: jest.fn(),
 }));
 
-/*jest.clearAllMocks() - Ensure that any side-effects like mock functions or timers are cleaned up, to avoid interference.*/
+
 
 describe("initializeTimes", () => {
   afterEach(() => {
