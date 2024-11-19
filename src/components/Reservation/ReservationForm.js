@@ -111,6 +111,7 @@ const ReservationForm = () => {
           type="submit"
           disabled={!isFormValid()}
        data-testid="next-button"
+       
         >
           Next
         </Button>

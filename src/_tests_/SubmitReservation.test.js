@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ReservationForm from "../components/Reservation/ReservationForm";
 import { MemoryRouter } from "react-router-dom";
-import { ReservationContext } from "./ReservationContext";
+import { ReservationContext } from "../context/ReservationContext";
 import { submitAPI } from "../api";
 
 jest.mock("../api", () => ({

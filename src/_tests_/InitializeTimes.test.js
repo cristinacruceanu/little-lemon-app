@@ -1,4 +1,4 @@
-import { initializeTimes } from "./Utils";
+import { initializeTimes } from "../utils/Utils";
 import { fetchAPI } from "../api";
 
 beforeEach(() => {
@@ -15,12 +15,9 @@ afterAll(() => {
   jest.resetAllMocks();
 });
 
-
 jest.mock("../api", () => ({
   fetchAPI: jest.fn(),
 }));
-
-
 
 describe("initializeTimes", () => {
   afterEach(() => {
